@@ -81,6 +81,12 @@ if [ -z "$VERSION" ]; then
     help
 fi
 
+# Check if zip is installed
+if [ zip ]; then
+    echo "Error: missing 'zip' utility."
+    exit 2
+fi
+
 # Create build directory structure
 echo "$ME: Creating the build directory structure under $BUILD_DIR..."
 rm -rf "$BUILD_DIR"
