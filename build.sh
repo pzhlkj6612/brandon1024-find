@@ -82,7 +82,7 @@ if [ -z "$VERSION" ]; then
 fi
 
 # Check if zip is installed
-if [ zip ]; then
+if ! command -v zip >/dev/null; then
     echo "Error: missing 'zip' utility."
     exit 2
 fi
